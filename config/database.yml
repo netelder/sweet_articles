@@ -23,3 +23,9 @@ production:
   encoding: unicode
   database: sweet_prod
   pool: 5
+
+old_database:
+  adapter: postgresql
+  encoding: unicode
+  database: sweet_articles-master_development
+  pool: 5
