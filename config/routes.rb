@@ -1,4 +1,11 @@
 SweetArticlesRails::Application.routes.draw do
+
+
+  resources :articles
+
+  resources :categories, only: [:index, :show]
+
+  resources :tags, only: [:index, :show]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

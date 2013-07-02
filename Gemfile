@@ -28,6 +28,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'rspec-rails'
+  gem 'sextant'
 end
 
 # To use ActiveModel has_secure_password
