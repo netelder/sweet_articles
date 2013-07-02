@@ -12,8 +12,7 @@ namespace :db do
       title = article['title'].titleize
       description = article['description']
       url = article['url']
-      category = article['category']
-      category = category.singularize.parameterize unless category.nil?
+      category = article['category'].to_s.singularize.parameterize
       tags = parse_tags(article['tags'])
 
 
