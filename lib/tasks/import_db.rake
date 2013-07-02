@@ -5,7 +5,7 @@ namespace :db do
 
   task :import => :environment do
 
-    ap articles =  Legacy.connection.select_all("select * from articles")
+    articles = get_articles_from_old_database
 
     articles.each do |article|
 
@@ -44,4 +44,14 @@ def parse_tags(tag_string)
     tags << tag.singularize.parameterize
   end
   tags
+end
+
+def get_articles_from_old_database
+    ActiveRecord::Base.establish_connection('old_database')
+    connection = ActiveRecord::Base.connection
+
+    articles =  connection.select_all("select * from articles")
+
+    ActiveRecord::Base.establish_connection('development')
+    articles
 end
